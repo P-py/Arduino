@@ -21,7 +21,7 @@ void loop() {
     digitalWrite(led_green_pedestrians, LOW);
     digitalWrite(led_red_pedestrians, HIGH);
     //Sinal para carros aberto - apenas LED verde.
-    printf("SInal para carros aberto.");
+    printf("Sinal para carros aberto.");
     digitalWrite(led_green_cars, HIGH);
     digitalWrite(led_yellow_cars, LOW);
     digitalWrite(led_red_cars, LOW);
