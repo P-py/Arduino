@@ -12,9 +12,27 @@ void setup() {
     pinMode(led_red_pedestrians, OUTPUT);
     pinMode(led_green_cars, OUTPUT);
     pinMode(led_yellow_cars, OUTPUT);
-    pinMode(led_red_cars, OUTPUT)
+    pinMode(led_red_cars, OUTPUT);
 }
 
 void loop() {
+    //Sinal para pedestres fechado - apenas LED vermelho.
+    printf("Sinal para pedestres fechado.");
+    digitalWrite(led_green_pedestrians, LOW);
+    digitalWrite(led_red_pedestrians, HIGH);
+    //Sinal para carros aberto - apenas LED verde.
+    printf("SInal para carros aberto.")
+    digitalWrite(led_green_cars, HIGH);
+    digitalWrite(led_yellow_cars, LOW);
+    digitalWrite(led_red_cars, LOW);
+    delay(3000);
+
+    //Sinal para carros fechando - apenas LED amarelo.
+    digitalWrite(led_green_cars, LOW);
+    digitalWrite(led_yellow_cars, HIGH);
+    digitalWrite(led_red_cars, HIGH);
+    delay(2000);
+
+    //Sinal
 
 }
