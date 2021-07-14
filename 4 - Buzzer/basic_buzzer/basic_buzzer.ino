@@ -1,5 +1,5 @@
 //Definindo variáveis
-int frequency = 2000;
+int frequency = 1000;
 
 void setup() {
   pinMode(10, OUTPUT); //Configurando o pino digital 10 como saída de dados.
