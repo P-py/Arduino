@@ -21,18 +21,27 @@ void loop() {
     digitalWrite(led_green_pedestrians, LOW);
     digitalWrite(led_red_pedestrians, HIGH);
     //Sinal para carros aberto - apenas LED verde.
-    printf("SInal para carros aberto.")
+    printf("SInal para carros aberto.");
     digitalWrite(led_green_cars, HIGH);
     digitalWrite(led_yellow_cars, LOW);
     digitalWrite(led_red_cars, LOW);
     delay(3000);
 
     //Sinal para carros fechando - apenas LED amarelo.
+    printf("Sinal para carros fechando.");
     digitalWrite(led_green_cars, LOW);
     digitalWrite(led_yellow_cars, HIGH);
-    digitalWrite(led_red_cars, HIGH);
+    digitalWrite(led_red_cars, LOW);
     delay(2000);
 
-    //Sinal
-
+    //Sinal para carros fechado - apenas LED vermelho.
+    printf("Sinal para carros fechado.");
+    digitalWrite(led_green_cars, LOW);
+    digitalWrite(led_yellow_cars, LOW);
+    digitalWrite(led_red_cars, HIGH);
+    //Sinal para pedestres aberto - apenas LED verde.
+    printf("Sinal para pedestres aberto.");
+    digitalWrite(led_green_pedestrians, HIGH);
+    digitalWrite(led_red_pedestrians, LOW);
+    delay(5000);
 }

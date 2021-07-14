@@ -2,5 +2,5 @@
     "port": "COM6",
     "board": "arduino:avr:uno",
     "programmer": "arduino:avrisp",
-    "sketch": "Traffic Light\\Basic_TrafficLight\\basic_trafficlight.ino"
+    "sketch": "Traffic Light\\Complex_TrafficLight\\trafficlight_for_padestrians.ino"
 }
