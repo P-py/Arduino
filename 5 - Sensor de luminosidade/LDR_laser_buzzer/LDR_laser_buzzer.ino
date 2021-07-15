@@ -9,6 +9,7 @@ int leituraBttn;
 
 void setup() {
   //Configurando os pinos
+  Serial.begin(9600);
   pinMode(pinoLDR, INPUT);
   pinMode(pinoBuzzer, OUTPUT);
   pinMode(pinoBttn, INPUT_PULLUP);
@@ -20,11 +21,21 @@ void loop() {
   //Coleta o estado do botão
   leituraBttn = digitalRead(pinoBttn);
 
+  Serial.print("Leitura de luminosidade: ");
+  Serial.print(leituraLDR);
+  Serial.print("\t");
+
+  Serial.print("Obstáculo detectado: ");
+
   if (leituraLDR <= 512) {
     tone(pinoBuzzer, 1000); //Aciona o Buzzer se houver um obstáculo
+    Serial.println("Sim");
   }
   else if (leituraBttn == LOW) {
     noTone(pinoBuzzer); //Desliga o buzzer caso o botão for pressionado.
+  }
+  else {
+    Serial.println("Não");
   }
   delay(100); //Espera 100ms para uma nova coleta/leitura
 }
