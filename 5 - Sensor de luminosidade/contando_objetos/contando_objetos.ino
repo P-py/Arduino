@@ -42,7 +42,10 @@ void loop() {
   else if (leituraLDR > 512 && flag == 1) {
     flag = 0;
   }
-  delay(10);
   Serial.print("Objetos contados: ");
-  Serial.println(contador);
+  Serial.print(contador);
+  Serial.print("\t");
+  Serial.print("Luminosidade: ");
+  Serial.println(leituraLDR);
+  delay(50);
 }
