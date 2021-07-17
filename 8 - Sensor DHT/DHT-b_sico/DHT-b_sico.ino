@@ -2,7 +2,6 @@
 
 //Variáveis de conexão
 const int pino_dht = 9; // Sensor DHT
-const int pino_a = 12;
 DHT dht(pino_dht, DHT11); // Função da biblioteca DHT, define o pino e qual versão do DHT
 
 //Variáveis globais
@@ -12,7 +11,6 @@ float umidade; // Armazenará o valor de umidade
 void setup() {
   Serial.begin(9600);
   dht.begin(); // Inicializa as funções do sensor
-  pinMode(pino_a, OUTPUT);
 }
 
 void loop() {
@@ -39,7 +37,4 @@ void loop() {
     Serial.print(umidade);
     Serial.println(" % \t"); 
   }
-  digitalWrite(pino_a, HIGH);
-  delay(100);
-  digitalWrite(pino_a, LOW);
 }
