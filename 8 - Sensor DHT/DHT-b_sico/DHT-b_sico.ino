@@ -31,7 +31,7 @@ void loop() {
     // Imprime os valores
     Serial.print("Temperatura: ");
     Serial.print(temperatura);
-    Serial.print(" ºC \t")
+    Serial.print(" ºC \t");
     
     Serial.print("Umidade: ");
     Serial.print(umidade);
