@@ -1,12 +1,12 @@
-#include "DHT.h"
+#include "DHT.h" // Incluindo a biblioteca para comunicação com o sensor.
 
 //Variáveis de conexão
-const int pino_dht = 9;
-float temperatura;
-float umidade;
-DHT dht(pino_dht, DHT11); 
+const int pino_dht = 9; // Sensor DHT
+DHT dht(pino_dht, DHT11); // Função da biblioteca DHT, define o pino e qual versão do DHT
 
 //Variáveis globais
+float temperatura; // Armazenará o valor de temperatura
+float umidade; // Armazenará o valor de umidade 
 
 void setup() {
   Serial.begin(9600);
