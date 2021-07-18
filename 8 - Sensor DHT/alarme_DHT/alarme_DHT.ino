@@ -15,6 +15,7 @@ float umidade;
 DHT dht(pinoDHT, DHT11);
 
 void setup() {
+  Serial.begin(9600);
   dht.begin(); // Inicializa as funções do sensor
 
   pinMode(pinoRED, OUTPUT);
@@ -32,7 +33,8 @@ void loop() {
   // Coleta temperatura e umidade do sensor
 
   // Caso ocorra algum problema acenderá o LED branco
-  if (isnan(umidade) or isnan(temperatura)) {
+  if (isnan(umidade) || isnan(temperatura)) {
+    Serial.println("Erro ao conectar o sensor DHT");
     digitalWrite(pinoRED, HIGH);
     digitalWrite(pinoGREEN, HIGH);
     digitalWrite(pinoBLUE, HIGH);
