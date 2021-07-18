@@ -626,7 +626,7 @@ void loop() {
       digitalWrite(pinB, HIGH);
       digitalWrite(pinC, HIGH);
       digitalWrite(pinD, LOW);
-      digitalWrite(pinE, HIGH);
+      digitalWrite(pinE, LOW);
       digitalWrite(pinF, HIGH);
       digitalWrite(pinG, HIGH);
       delay(1500);
