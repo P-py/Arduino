@@ -6,7 +6,6 @@ const int pinoDHT = 9;
 const int pinoRED = 11;
 const int pinoGREEN = 12;
 const int pinoBLUE = 13;
-const int pinoBuzzer = 10;
 const int pinA = 8;
 const int pinB = 7;
 const int pinC = 6;
@@ -18,7 +17,6 @@ const int pinG = 3;
 // Variáveis globais
 int temperatura;
 int umidade;
-int number;
 
 DHT dht(pinoDHT, DHT11);
 
@@ -29,7 +27,6 @@ void setup() {
   pinMode(pinoRED, OUTPUT);
   pinMode(pinoGREEN, OUTPUT);
   pinMode(pinoBLUE, OUTPUT);
-  pinMode(pinoBuzzer, OUTPUT);
   pinMode(pinA, OUTPUT);
   pinMode(pinB, OUTPUT);
   pinMode(pinC, OUTPUT);
@@ -55,7 +52,6 @@ void loop() {
     digitalWrite(pinoBLUE, HIGH);
   }
   else {
-    number = temperatura;
     if (temperatura == 50) {
       digitalWrite(pinA, HIGH);
       digitalWrite(pinB, LOW);
@@ -649,17 +645,159 @@ void loop() {
       digitalWrite(pinG, HIGH);
       delay(1500);
     }
+    else if (temperatura == 17) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+    }
+    else if (temperatura == 16) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, LOW);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      delay(1500);
+    }
+    else if (temperatura == 15) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, LOW);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      delay(1500);
+    }
+    else if (temperatura == 14) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      delay(1500);
+    }
+    else if (temperatura == 13) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, HIGH);
+      delay(1500);
+    }
+    else if (temperatura == 12) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, LOW);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, HIGH);
+      delay(1500);
+    }
+    else if (temperatura == 11) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+    }
+    else if (temperatura == 10) {
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, LOW);
+      delay(1500);
+    }
     if (temperatura < 30 && temperatura >= 20) {
       digitalWrite(pinoRED, LOW);
       digitalWrite(pinoGREEN, HIGH);
       digitalWrite(pinoBLUE, LOW);
-      noTone(pinoBuzzer);
     }
     else if (30 < temperatura < 35 || 15 < temperatura < 20 ) {
       digitalWrite(pinoRED, HIGH);
       digitalWrite(pinoGREEN, HIGH);
       digitalWrite(pinoBLUE, LOW);
-      tone(pinoBuzzer, 1000);
       delay(500);
     }
 
@@ -667,7 +805,6 @@ void loop() {
       digitalWrite(pinoRED, HIGH);
       digitalWrite(pinoGREEN, LOW);
       digitalWrite(pinoBLUE, LOW);
-      tone(pinoBuzzer, 2000);
       delay(1000);
     }
     Serial.print("Temperatura: ");
