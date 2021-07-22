@@ -6,10 +6,16 @@ const int pinoD = 11;
 
 void setup() {
   // Configuração dos pinos
-  pinMode(pino_a, OUTPUT);
+  pinMode(pinoA, OUTPUT);
+  pinMode(pinoB, OUTPUT);
+  pinMode(pinoC, OUTPUT);
+  pinMode(pinoD, OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  digitalWrite(pinoA, LOW);
+  digitalWrite(pinoB, LOW);
+  digitalWrite(pinoC, LOW);
+  digitalWrite(pinoD, LOW);
+  delay(1000);
 }
