@@ -1,6 +1,6 @@
 {
     "port": "COM6",
     "board": "arduino:avr:uno",
-    "programmer": "arduino:avrisp",
+    "programmer": "arduino:avrispmkii",
     "sketch": "3 - Reading a Button\\reading_a_button.ino"
 }
