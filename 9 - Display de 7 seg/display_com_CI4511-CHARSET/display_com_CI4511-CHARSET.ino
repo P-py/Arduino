@@ -20,6 +20,76 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  if (Serial.avaliable() > 0) {
+    leitura_serial = Serial.read();
+    Serial.println(leitura_serial);
+    if(leitura_serial == '0'){
+          digitalWrite(pinoA, LOW);
+          digitalWrite(pinoB, LOW);
+          digitalWrite(pinoC, LOW);
+          digitalWrite(pinoD, LOW);
+    }
+    if(leitura_serial == '1'){
+        digitalWrite(pinoA, HIGH);
+        digitalWrite(pinoB, LOW);
+        digitalWrite(pinoC, LOW);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '2'){
+        digitalWrite(pinoA, LOW);
+        digitalWrite(pinoB, HIGH);
+        digitalWrite(pinoC, LOW);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '3'){
+        digitalWrite(pinoA, HIGH);
+        digitalWrite(pinoB, HIGH);
+        digitalWrite(pinoC, LOW);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '4'){
+        digitalWrite(pinoA, LOW);
+        digitalWrite(pinoB, LOW);
+        digitalWrite(pinoC, HIGH);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '5'){
+        digitalWrite(pinoA, HIGH);
+        digitalWrite(pinoB, LOW);
+        digitalWrite(pinoC, HIGH);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '6'){
+        digitalWrite(pinoA, LOW);
+        digitalWrite(pinoB, HIGH);
+        digitalWrite(pinoC, HIGH);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '7'){
+        digitalWrite(pinoA, HIGH);
+        digitalWrite(pinoB, HIGH);
+        digitalWrite(pinoC, HIGH);
+        digitalWrite(pinoD, LOW);
+    }
+      
+    if(leitura_serial == '8'){
+        digitalWrite(pinoA, LOW);
+        digitalWrite(pinoB, LOW);
+        digitalWrite(pinoC, LOW);
+        digitalWrite(pinoD, HIGH);
+    }
+      
+    if(leitura_serial == '9'){
+        digitalWrite(pinoA, HIGH);
+        digitalWrite(pinoB, LOW);
+        digitalWrite(pinoC, LOW);
+        digitalWrite(pinoD, HIGH);
+    }
+  }
 }
