@@ -20,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.avaliable() > 0) {
+  if (Serial.available() > 0) {
     leitura_serial = Serial.read();
     Serial.println(leitura_serial);
     if(leitura_serial == '0'){
