@@ -5,13 +5,14 @@ const int pinoBuzzer = 7;
 const int pinoLED = 8;
 
 // Variáveis globais
-const int distancia_obstaculo = 50;
+const int distancia_obstaculo = 80;
 
 void setup() {
   Serial.begin(9600);
   pinMode(trig, OUTPUT);
   pinMode(echo, INPUT);
   pinMode(pinoBuzzer, OUTPUT);
+  pinMode(pinoLED, OUTPUT);
 }
 
 void loop() {
@@ -22,16 +23,40 @@ void loop() {
     Serial.println("cm");
     tone(pinoBuzzer, 2500);
     digitalWrite(pinoLED, HIGH);
-    delay(100);
+    delay(200);
     noTone(pinoBuzzer);
     digitalWrite(pinoLED, LOW);
-    delay(100);
+    delay(200);
     tone(pinoBuzzer, 2500);
     digitalWrite(pinoLED, HIGH);
-    delay(100);
+    delay(200);
     noTone(pinoBuzzer);
     digitalWrite(pinoLED, LOW);
-    delay(100);
+    delay(200);
+    tone(pinoBuzzer, 2500);
+    digitalWrite(pinoLED, HIGH);
+    delay(200);
+    noTone(pinoBuzzer);
+    digitalWrite(pinoLED, LOW);
+    delay(200);
+    tone(pinoBuzzer, 2500);
+    digitalWrite(pinoLED, HIGH);
+    delay(200);
+    noTone(pinoBuzzer);
+    digitalWrite(pinoLED, LOW);
+    delay(200);
+    tone(pinoBuzzer, 2500);
+    digitalWrite(pinoLED, HIGH);
+    delay(200);
+    noTone(pinoBuzzer);
+    digitalWrite(pinoLED, LOW);
+    delay(200);
+    tone(pinoBuzzer, 2500);
+    digitalWrite(pinoLED, HIGH);
+    delay(200);
+    noTone(pinoBuzzer);
+    digitalWrite(pinoLED, LOW);
+    delay(200);
     tone(pinoBuzzer, 2500);
     digitalWrite(pinoLED, HIGH);
   }
