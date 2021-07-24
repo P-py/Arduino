@@ -1,3 +1,6 @@
+// Código escrito por Pedro Salviano Santos (@p-py) - MIT License //
+// Meu site: P-py.github.io
+
 //Definindo variáveis
 #define led_green_pedestrians 9
 #define led_red_pedestrians 10
