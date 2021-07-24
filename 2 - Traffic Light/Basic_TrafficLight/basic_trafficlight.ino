@@ -1,3 +1,6 @@
+// Código escrito por Pedro Salviano Santos (@p-py) - MIT License //
+// Meu site: P-py.github.io
+
 //Definindo as variáveis.
 #define led_green 11
 #define led_yellow 12
