@@ -1,3 +1,6 @@
+// Código escrito por Pedro Salviano Santos (@p-py) - MIT License //
+// Meu site: P-py.github.io
+
 // Variáveis de conexão
 const int trig = 3;
 const int echo = 2;
