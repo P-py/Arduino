@@ -1,3 +1,6 @@
+// Código escrito por Pedro Salviano Santos (@P-py) - MIT License //
+// Meu site: P-py.github.io
+
 #define led1 13
 
 void setup() {
