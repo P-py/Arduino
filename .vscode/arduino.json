@@ -1,6 +1,0 @@
-{
-    "port": "COM6",
-    "board": "arduino:avr:uno",
-    "programmer": "arduino:avrispmkii",
-    "sketch": "9 - Display de 7 seg\\display_com_CI4511\\display_com_CI4511.ino"
-}
