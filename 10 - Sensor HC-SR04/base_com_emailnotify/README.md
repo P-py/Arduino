@@ -22,3 +22,48 @@ Os requisitos para rodar os scripts corretamente são:
 | smtplib (biblioteca python) | Envio dos alertas por e-mail |
 | email lib (biblioteca python) | Envio dos alertas por e-mail |
 | PySerial (biblioteca python) | Comunicação entre o lado Python com o lado Arduino. |
+
+Caso você não possua uma das bibliotecas python citadas acima basta instalar elas através do `pip`:
+
+```shell
+pip install smtplib
+
+pip install email
+
+pip install PySerial
+``` 
+
+Após a instalação de todos os requisitos é necessário que você faça download do código, através do `git` ou do aplicativo web/desktop do GitHub:
+
+*Para download através do `git`*:
+```shell
+git clone https://github.com/P-py/ArduinoSecuritySystemHC-SR04.git
+```
+
+*Para download com GitHub web ou desktop:*
+
+Vá para este link: [P-py/ArduinoSecuritySystemHC-SR04](https://github.com/P-py/ArduinoSecuritySystemHC-SR04)-> Clique no botão verde "Code" -> "Download ZIP"
+
+Após baixar o código está na hora de criar uma nova conta gmail que funcione como o bot que envia as mensagens. (*Este processo não será explicado aqui.*)
+
+Quando terminar de criar sua nova conta bot basta acessar https://myaccount.google.com/security e ativar a autentificação de dois fatores e criar uma senha de app. (*Este processo não será explicado aqui.*)
+
+Quando terminar isso você estará no último passo, basta acessar a basta com o código que você baixou, abrir o arquivo `emailAlarm.py` e mudar as variáveis seguintes:
+
+```python
+[...]
+
+user = "###"
+password = "###"
+message['from'] = user
+
+[...]
+```
+
+O campo `user="###"` deve ser substituído pelo seu endereço de e-mail da conta criada, e o campo `password="###"` pela senha de app criada.
+
+Chegando aqui e concluindos todos os passos, parabéns! Você instalou tudo com sucesso.
+
+## Utilização
+
+*__Nota:__ para a utilização do sistema é necessário e obrigatório seguir os passos da seção "Instalação", anterior à esta.*
