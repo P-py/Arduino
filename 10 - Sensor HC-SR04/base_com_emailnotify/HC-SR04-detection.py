@@ -1,18 +1,18 @@
 """
 *********************************************************************
-HC-SR04-detection - integrated with ArduinoUNO + HC-SR04
+HC-SR04-detection - integrado com ArduinoUNO + HC-SR04
 (c) Copyright (c) 2021 Pedro Salviano Santos
 License: MIT.
 *********************************************************************
 """
-import serial #To comunicate with arduino board ~ https://pyserial.readthedocs.io/en/latest/pyserial.html
-import time #Time management.
-from emailAlarm import email_send #Sub-function to send email alert.
+import serial #Para comunicação com o Arduino
+import time #Administração de tempo no código
+from emailAlarm import email_send #Função para enviar o e-mail de alerta
 
-#Try to connect to the board
+#Tenta se conectar à placa
 try:
     ser = serial.Serial("COM6")
-    #Waits for the board reboot
+    #Espera pelo reboot da placa
     time.sleep(3)
 #Caso não consiga se conectar imprime uma mensagem de erro
 except:
@@ -33,7 +33,7 @@ while True:
             for i in range(10):
                 print("Enviando e-mail de ALERTA!")
             try:
-                email_send('ALARME ATIVADO! Possível intruso no perímetro!', 'O sensor detectou um movimento acima do normal!', 'pedrosalviano170@gmail.com')
+                email_send('ALARME ATIVADO! Possível intruso no perímetro!', 'O sensor detectou um movimento acima do normal!', '###')
             except:
                 print("Erro ao enviar o e-mail!")
             time.sleep(5)
