@@ -22,15 +22,15 @@ void loop() {
   leituraVRY = analogRead(VRY);
   leitura_botao = digitalRead(SW);
 
-  Serial.print("Leitura em VRX: ");
+  Serial.print("VRX: ");
   Serial.print("\t");
   Serial.print(leituraVRX);
   Serial.print("\t");
-  Serial.print("Leitura em VRY: ");
+  Serial.print("VRY: ");
   Serial.print("\t");
   Serial.print(leituraVRY);
   Serial.print("\t");
-  Serial.print("Leitura do botão: ");
+  Serial.print("Botão: ");
   Serial.println(leitura_botao);
 
   delay(10);
