@@ -19,6 +19,7 @@ boolean fechar = 0;
 Servo servo_motor;
 
 void setup() {
+  Serial.begin(9600);
   //Configurando os pinos
   pinMode(VRX, INPUT);
   pinMode(VRY, INPUT);
@@ -27,48 +28,22 @@ void setup() {
 }
 
 void loop() {
-  leituraVRY = analogRead(VRY);
   leituraVRX = analogRead(VRX);
-  leituraVRX = map(leituraVRX, 0, 1023, OPEN, CLOSE);
-  servo_motor.write(leituraVRX);
-  delay(10);
 
-  if (leituraVRY >= 550) {
-    abrir = 1;
+  if (leituraVRX >= 545) {
+    leituraVRX = map(leituraVRX, 0, 1023, OPEN, CLOSE);
+    servo_motor.write(10);
+    Serial.println(leituraVRX);
   }
-  else if (leituraVRY <= 490) {
-    fechar = 1;
+  else if (leituraVRX <= 475) {
+    leituraVRX = map(leituraVRX, 0, 1023, OPEN, CLOSE);
+    servo_motor.write(100);
+    Serial.println(leituraVRX);
   }
-  while (abrir == 1) {
-    leituraVRY = analogRead(VRY);
-    leituraSW = digitalRead(SW);
 
-    if (leituraSW == HIGH) {
-      if (leituraVRY > posi_atual) {
-        posi_atual = leituraVRY;
-        leituraVRY = map(leituraVRY, 0, 1023, CLOSE, OPEN);
-        servo_motor.write(leituraVRY);
-      }
-    }
-    else {
-      abrir = 0;
-      posi_atual = 520;
-    }
+  else {
+    Serial.println(leituraVRX);
   }
-  while (fechar == 1) {
-    leituraVRY = analogRead(VRY);
-    leituraSW = digitalRead(SW);
 
-    if (leituraSW == HIGH) {
-      if (leituraVRY < posi_atual) {
-        posi_atual = leituraVRY;
-        leituraVRY = map(leituraVRY, 0, 1023, CLOSE, OPEN);
-        servo_motor.write(leituraVRY);
-      }
-    }
-    else {
-      fechar = 0;
-      posi_atual = 520;
-    }
-  }
+  delay(100  );
 }
