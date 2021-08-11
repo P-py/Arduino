@@ -32,7 +32,7 @@ void loop() {
 
   if (leituraVRX >= 545) {
     leituraVRX = map(leituraVRX, 0, 1023, OPEN, CLOSE);
-    servo_motor.write(10);
+    servo_motor.write(40);
     Serial.println(leituraVRX);
   }
   else if (leituraVRX <= 475) {
