@@ -30,7 +30,7 @@ void loop() {
     }
   }
 
-  if (guarda_estado == HIGH) {
+  if (guarda_estado == HIGH && flag == LOW) {
     digitalWrite(pinoLEDW, HIGH);
     analogWrite(pinoLEDR, 0);
     analogWrite(pinoLEDG, 255);
