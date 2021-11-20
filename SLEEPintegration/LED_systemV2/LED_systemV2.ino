@@ -96,6 +96,20 @@ void loop() {
       analogWrite(pinoLEDB, 255);
       flag = HIGH;
     }
+    if (leitura == '7') {
+      digitalWrite(pinoLEDW, LOW);
+      analogWrite(pinoLEDR, 75);
+      analogWrite(pinoLEDG, 0);
+      analogWrite(pinoLEDB, 150);
+      flag = HIGH;
+    }
+    if (leitura == '8') {
+      digitalWrite(pinoLEDW, LOW);
+      analogWrite(pinoLEDR, 190);
+      analogWrite(pinoLEDG, 100);
+      analogWrite(pinoLEDB, 0);
+      flag = HIGH;
+    }
   }
   delay(100);
 }
