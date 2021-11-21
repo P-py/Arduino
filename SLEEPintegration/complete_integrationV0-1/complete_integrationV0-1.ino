@@ -126,6 +126,13 @@ void loop() {
         Serial.println(" %  de umidade relativa do ar.");
       }
     }
+    if (leitura == '7') {
+      digitalWrite(pinoLEDW, LOW);
+      digitalWrite(pinoLEDR, 75);
+      digitalWrite(pinoLEDG, 0);
+      digitalWrite(pinoLEDB, 150);
+      flag = HIGH;
+    }
   }
   delay(100);
 }
