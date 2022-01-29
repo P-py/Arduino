@@ -1,6 +1,8 @@
 // NOTA: as funções envolvendo servos que estão comentadas se encontram em desenvolvimento
 // e foram temporariamente desabilitadas, devido à problemas na produção.
 
+// Para comunicação serial em relação à ativação dos LEDs deve-se utilizar o padrão LED-[cor]
+
 //Bibliotecas
 #include "DHT.h"
 #include <Servo.h>
@@ -29,7 +31,6 @@ DHT dht(pino_dht, DHT11);
 //Variáveis globais
 int temperatura;
 int umidade;
-
 
 void setup() {
   Serial.begin(9600);
@@ -68,6 +69,7 @@ void loop() {
 //  if (flagservo == LOW) {
 //    servo_motor.write(10);
 //  }
+
   
   estado = digitalRead(bttn);
 
@@ -94,57 +96,58 @@ void loop() {
 
   
   if (Serial.available() > 0 ) {
-    leitura = Serial.read();
+    String leitura = Serial.readStringUntil('\n');
     //leitura = leitura-48;
-    if (leitura == '1') {
+    Serial.println(leitura);
+    if (leitura == "LED-all") {
       digitalWrite(pinoLEDW, HIGH);
       analogWrite(pinoLEDR, 150);
       analogWrite(pinoLEDG, 255);
       analogWrite(pinoLEDB, 255);
       flag = HIGH;
     }
-    if (leitura == '0') {
+    if (leitura == "LED-off") {
       digitalWrite(pinoLEDW, LOW);
       analogWrite(pinoLEDR, 0);
       analogWrite(pinoLEDG, 0);
       analogWrite(pinoLEDB, 0);
     }
-    if (leitura == '3') {
+    if (leitura == "LED-greenblue") {
       digitalWrite(pinoLEDW, HIGH);
       analogWrite(pinoLEDR, 0);
       analogWrite(pinoLEDG, 255);
       analogWrite(pinoLEDB, 255);
       flag = HIGH;
     }
-    if (leitura == '2') {
+    if (leitura == "LED-white") {
       digitalWrite(pinoLEDW, HIGH);
       analogWrite(pinoLEDR, 0);
       analogWrite(pinoLEDG, 0);
       analogWrite(pinoLEDB, 0);
       flag = HIGH;
     }
-    if (leitura == '4') {
+    if (leitura == "LED-red") {
       digitalWrite(pinoLEDW, LOW);
       analogWrite(pinoLEDR, 255);
       analogWrite(pinoLEDG, 0);
       analogWrite(pinoLEDB, 0);
       flag = HIGH;
     }
-    if (leitura == '5') {
+    if (leitura == "LED-green") {
       digitalWrite(pinoLEDW, LOW);
       analogWrite(pinoLEDR, 0);
       analogWrite(pinoLEDG, 255);
       analogWrite(pinoLEDB, 0);
       flag = HIGH;
     }
-    if (leitura == '6') {
+    if (leitura == "LED-blue") {
       digitalWrite(pinoLEDW, LOW);
       analogWrite(pinoLEDR, 0);
       analogWrite(pinoLEDG, 0);
       analogWrite(pinoLEDB, 255);
       flag = HIGH;
     }
-    if (leitura == 't'){
+    if (leitura == "temperature-info"){
       delay(2000);
       
       temperatura = dht.readTemperature();
@@ -160,7 +163,7 @@ void loop() {
         Serial.println(" %  de umidade relativa do ar.");
       }
     }
-    if (leitura == '7') {
+    if (leitura == "LED-purple") {
       digitalWrite(pinoLEDW, LOW);
       digitalWrite(pinoLEDR, 75);
       digitalWrite(pinoLEDG, 0);
