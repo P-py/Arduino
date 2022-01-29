@@ -12,7 +12,10 @@ const int pinoLEDB = 9;
 const int pinoLEDW = 8;
 
 char leitura;
+const int bttnservo = 2;
+int bttn_servo = 0;
 const int bttn = 7;
+int flagservo = LOW;
 int estado = 0;
 int guarda_estado = LOW;
 int flag = LOW;
@@ -33,15 +36,35 @@ void setup() {
   pinMode(pinoLEDB, OUTPUT);
   pinMode(pinoLEDW, OUTPUT);
   pinMode(bttn, INPUT_PULLUP);
+  pinMode(bttnservo, INPUT_PULLUP);
 
   dht.begin();
 
-  servo_motor.attach(5);
+  servo_motor.attach(4);
 
-  servo_motor.attach(50);
+  servo_motor.write(10);
 }
 
 void loop() {
+  bttn_servo = digitalRead(bttnservo);
+
+  //Serial.println(bttn_servo);
+  //Serial.println(flagservo);
+  
+  if (bttn_servo == LOW) {
+    flagservo = !flagservo;
+    while (digitalRead(bttnservo) == LOW) {
+      delay(50);
+    }
+  }
+
+  if (flagservo == HIGH) {
+    servo_motor.write(40);
+  }
+
+  if (flagservo == LOW) {
+    servo_motor.write(10);
+  }
   
   estado = digitalRead(bttn);
 
@@ -142,7 +165,10 @@ void loop() {
       flag = HIGH;
     }
     if (leitura == 'n') {
-      
+      servo_motor.write(40);
+    }
+    if (leitura == 's') {
+      servo_motor.write(0);
     }
   }
   delay(100);
